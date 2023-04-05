@@ -1,3 +1,4 @@
+# reference: https://www.restapitutorial.com/lessons/httpmethods.html
 from flask import Flask, request
 import base62
 
@@ -6,18 +7,30 @@ app = Flask(__name__)
 # a dict to store url and token
 url_dict = {}
 
-# post url 
+# post url and get shortened_id 
 @app.route('/', methods=['POST'])
 def post_url():
+    # get url
     url = request.args
-    if url in url_dict.values():
-        return "The url exists", 400
+    # check whether url already exists
+    values = list(url_dict.values())
+    if url in values:
+        keys = list(url_dict.keys())
+        url_id = keys[values.index(url)]
+        return ("The url already exists, the shortened id is " + url_id), 400
+    # encode to get identifier
     url_id = base62.base62_encode(len(url_dict))
     # store in the dict
     url_dict[url_id] = url
-    shorten_url = url_id
-    return shorten_url, 201
+    return url_id, 201
 
+@app.route('/', methods=['GET'])
+def get():
+    # get keys from dict
+    keys = list(url_dict.keys())
+    return keys, 200
+
+# get url based on id
 @app.route('/<string:url_id>', methods=['GET'])
 def get_url(url_id):
     if url_id in url_dict:
@@ -25,17 +38,32 @@ def get_url(url_id):
     else:
         return "404 Error: The identifier does not exist", 404
 
+# delete /
 @app.route('/', methods=['DELETE'])
 def delete():
     return "404 Error"
 
+# delete based on the id
 @app.route('/<string:url_id>', methods=["DELETE"])
 def delete_url(url_id):
     if url_id in url_dict:
         del url_dict[url_id]
         return "The identifier has been deleted", 204
     else:
-        return "404 Error: The identifier does not exist"
+        return "404 Error: The identifier does not exist", 404
+
+# put based on id
+@app.route('/<string:url_id>', methods=["PUT"])
+def put_url(url_id):
+    if url_id in url_dict:
+        # get url
+        new_url = request.args 
+        # update url to the given identifier
+        url_dict[url_id] = new_url
+        return "The URL has been updated", 200
+    else:
+        return "404 Error: The identifier does not exist", 404
+
 
 if __name__ == '__main__':
     app.run(debug=True)
