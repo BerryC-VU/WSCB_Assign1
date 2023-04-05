@@ -1,13 +1,16 @@
-# reference for validity: https://snyk.io/blog/secure-python-url-validation/
 from flask import Flask, request
 import base62
 import validators
+import re
 
 app = Flask(__name__)
 
 # a dict to store url and token
 url_dict = {}
 
+# reference for checking validity: https://www.makeuseof.com/regular-expressions-validate-url/
+url_pattern = "^((http|https)://)[-a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)$"
+    
 # post url and get shortened_id 
 @app.route('/', methods=['POST'])
 def post_url():
@@ -21,7 +24,7 @@ def post_url():
         return ("The url already exists, the shortened identifier is " + url_id), 400
     else:
         # if the url is valid, then return id and add it to the dict
-        if validators.url(url):
+        if (re.match(url_pattern, url)):
             # encode to get identifier
             url_id = base62.base62_encoder(len(url_dict))
             # store in the dict
@@ -66,7 +69,7 @@ def put_url(url_id):
         # get new url
         new_url = request.args['url'] 
         # check validity
-        if validators.url(new_url):
+        if (re.match(url_pattern, new_url)):
             # update url to the given identifier
             url_dict[url_id] = new_url
             return "The URL has been updated", 200
