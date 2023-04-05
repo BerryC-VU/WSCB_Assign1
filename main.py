@@ -1,4 +1,4 @@
-# reference: https://www.restapitutorial.com/lessons/httpmethods.html
+# reference for validity: https://snyk.io/blog/secure-python-url-validation/
 from flask import Flask, request
 import base62
 import validators
@@ -23,7 +23,7 @@ def post_url():
         # if the url is valid, then return id and add it to the dict
         if validators.url(url):
             # encode to get identifier
-            url_id = base62.base62_encode(len(url_dict))
+            url_id = base62.base62_encoder(len(url_dict))
             # store in the dict
             url_dict[url_id] = url
             return url_id, 201
