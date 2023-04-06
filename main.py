@@ -2,8 +2,9 @@ import re
 import requests
 import threading
 import heapq
-from flask import Flask, request
-from flask_restful import Resource, Api, reqparse, inputs
+import base62
+from flask import Flask
+from flask_restful import Resource, Api, reqparse
 
 lock = threading.Lock()
 
@@ -18,9 +19,9 @@ parser.add_argument('url', type=str, location='form', help='input example: http(
 
 mappings = {'0': 'http://www.google.com'}
 
-end = 3
-id_pool = list(range(1, end))
-
+# https://docs.python.org/3/library/heapq.html
+counter = 1
+id_pool = []
 heapq.heapify(id_pool)
 
 def is_valid(url):
@@ -49,11 +50,15 @@ def is_valid(url):
 
 def generate_id(url):
     global id_pool
-    global end
-    if len(id_pool) == 0:
-        id_pool = list(range(end, end + 5))
-        end = end + 5
-    return str(heapq.heappop(id_pool))
+    global counter
+    if len(id_pool) > 0:
+        return heapq.heappop(id_pool)
+    else:
+        url_id = base62.base62_encoder(counter)
+        counter += 1
+        return url_id
+    
+
 
 class AccessWithID(Resource):
     def get(self, id):
@@ -62,7 +67,7 @@ class AccessWithID(Resource):
         if id in mappings:
             return mappings[id], 301
         else:
-            return 404
+            return "404 Error: The identifier does not exist", 404
 
        
     def put(self, id):
@@ -71,24 +76,24 @@ class AccessWithID(Resource):
         # 3. 404
         with lock:
             if id not in mappings:
-                return 404
+                return "404 Error: The identifier does not exist", 404
             args = parser.parse_args()
             url = args['url']
             if not is_valid(url):
-                return 400
+                return "400 Error: The URL is not valid", 400
             else:
                 mappings[id] = url
-                return url, 200
+                return "The URL has been updated", 200
     
     def delete(self, id):
         # 1. 204 (204 No Content)
         # 2. 404
         with lock:
             if id not in mappings:
-                return 404
+                return "404 Error: The identifier does not exist", 404
             del mappings[id]
-            heapq.heappush(id_pool, int(id))
-            return 204
+            heapq.heappush(id_pool, id)
+            return "The identifier has been deleted", 204
 
 
 class AccessWithoutID(Resource):
@@ -103,20 +108,22 @@ class AccessWithoutID(Resource):
             args = parser.parse_args()
             url = args['url'] 
             if is_valid(url):
-                if url in mappings.values():
-                    for k, v in mappings.items():
-                        if v == url:
-                            return k, 201  
+                 # check whether url already exists
+                values = list(mappings.values())
+                if url in values:
+                    keys = list(mappings.keys())
+                    id = keys[values.index(url)]
+                    return ("The url already exists, the shortened identifier is " + id), 400
                 else:
                     id = generate_id(url=url)
                     mappings[id] = url
                     return id, 201
             else:
-                return "error", 400 
+                return "400 Error: The URL is not valid", 400 
     
     def delete(self):
         # 1. 404
-        return 404
+        return "404 Error", 404
 
 api.add_resource(AccessWithoutID, '/')
 api.add_resource(AccessWithID, '/<string:id>')
