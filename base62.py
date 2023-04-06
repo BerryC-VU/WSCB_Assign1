@@ -13,3 +13,5 @@ def base62_encoder(num, alphabet=ALPHABET):
         num = num // 62
     arr.reverse()
     return ''.join(arr)
+
+# def base62_decoder()
