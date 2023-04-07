@@ -1,0 +1,1 @@
+(sh -x demo1.sh & sh -x demo2.sh) > res.txt  
