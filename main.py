@@ -33,7 +33,7 @@ def is_valid(url):
         """
         regex = "^((http|https)://)[-a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)$"
         r = re.compile(regex)
-        if (re.fullmatch(r, url)):
+        if (re.match(regex, url)): # alternative: fullmatch()
             return True
         else:
             return False
@@ -81,9 +81,12 @@ class AccessWithID(Resource):
             url = args['url']
             if not is_valid(url):
                 return "400 Error: The URL is not valid", 400
+            # else:
             else:
+                old_url = mappings[id]
                 mappings[id] = url
-                return "The URL has been updated", 200
+                return "The URL has been updated. old_url is: " + old_url + " and the updated url is: " + url, 200
+
     
     def delete(self, id):
         # 1. 204 (204 No Content)
@@ -99,7 +102,7 @@ class AccessWithID(Resource):
 class AccessWithoutID(Resource):
     def get(self):
         # 1. 200, mapping
-        return mappings, 200        
+        return len(mappings),  200        
     
     def post(self):
         # 1. 201, id (201 Created)
@@ -108,7 +111,7 @@ class AccessWithoutID(Resource):
             args = parser.parse_args()
             url = args['url'] 
             if is_valid(url):
-                 # check whether url already exists
+                # check whether url already exists
                 values = list(mappings.values())
                 if url in values:
                     keys = list(mappings.keys())
