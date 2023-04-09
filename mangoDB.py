@@ -64,7 +64,7 @@ def delete_all():
 # add_mapping(3,'https://www.baidu.com')
 
 # print(res,type(res),res[0],type(res[0]))
-
+# print(find_all())
 
 
 

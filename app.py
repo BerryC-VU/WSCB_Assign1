@@ -27,18 +27,25 @@ def route_id(id):
     elif request.method == 'DELETE':
         # delete this mapping
         mangoDB.delete_many(id)
-        return "404"
+        return 404
 
-@app.route('/', methods = ['GET', 'POST','DELETE'])
-def route():
+
+def generate_id():
+    pass
+
+
+@app.route('/string:<url>', methods = ['GET', 'POST','DELETE'])
+def route(url):
     if request.method == 'GET':
         # return 200, get key
-        return 200
+        mappings = mangoDB.find_all()
+        return(200, mappings)
     elif request.method == 'POST':
-        # shorten this url?
-        pass
+        # create a url-id mapping
+        id = generate_id()
+        mangoDB.add_mapping(id, url)
     elif request.method == 'DELETE':
-        pass
+        return 404
 
 
 if __name__ == '__main__':
