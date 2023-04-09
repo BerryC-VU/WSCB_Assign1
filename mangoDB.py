@@ -21,27 +21,51 @@ def add_mapping(id = 1,url = 'https://www.baidu.com'):
 # 查询功能
 def find_all():
     result = collections.find()
+    res = []
     for a in result:
-        print(a)
-def search_by_id(id=1):
+        res.append([a['id'],a['url']])
+        # print(a['id'], a['url'])
+    return res
+def search_id(id):
     result = collections.find({}, {'_id': 0, 'id': id})
+    res = []
     for a in result:
-        print(a)
+        res.append(a['id'])
+        # print(a)
+    return res
+def search_url(url = 'https://www.baidu.com'):
+    result = collections.find({}, {'_id': 0, 'url': url})
+    res = []
+    for a in result:
+        res.append(a['url'])
+        # print(a)
+    return res
 
+def search_mapping(id =1, url = 'https://www.baidu.com'):
+    result = collections.find({}, {'_id': 0, 'id': id ,'url': url})
+    res = []
+    for a in result:
+        res.append([a['id'],a['url']])
+        # print(a)
+    return res
 # 删除
 def delete_one(id=1):
     query_name = {"id": id}
     collections.delete_one(query_name)
+
 def delete_many(id):
     query_name = {"id": id}
     collections.delete_many(query_name)
 def delete_all():
     collections.delete_many({})
 
-add_mapping(1,'https://www.baidu.com')
-add_mapping(2,'https://www.baidu.com')
-add_mapping(3,'https://www.baidu.com')
-# find_all()
-# delete_many(1)
-# delete_all()
-find_all()
+# add_mapping(1,'https://www.baidu.com')
+# add_mapping(2,'https://www.baidu.com')
+# add_mapping(3,'https://www.baidu.com')
+
+# print(res,type(res),res[0],type(res[0]))
+
+
+
+
+
