@@ -187,7 +187,7 @@ class AccessWithoutID(Resource):
                 else:
                     return "400 Error: The URL is not valid", 400 
         except:           
-            print("Handle POST request with ID fails.")
+            print("Handle POST request without ID fails.")
             
     def delete(self):
         """Handle HTTP DELETE Request without ID
@@ -199,7 +199,7 @@ class AccessWithoutID(Resource):
         try:
             return "404 Error", 404
         except:
-            print("Handle DELETE request with ID fails.")
+            print("Handle DELETE request without ID fails.")
 
 api.add_resource(AccessWithoutID, '/')
 api.add_resource(AccessWithID, '/<string:id>')
