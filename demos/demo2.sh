@@ -1,3 +1,5 @@
+# ./demos/demo2.sh > ./results/demo2_res.txt
+
 echo "add 3 urls"
 curl http://127.0.0.1:5000/ -d "url=http://www.youtube.com" -X POST
 curl http://127.0.0.1:5000/ -d "url=http://www.instagram.com" -X POST
@@ -8,3 +10,4 @@ curl http://127.0.0.1:5000/ -X GET
 # echo "return all urls"
 # curl http://127.0.0.1:5000/ -X GET 
  
+#> ./results/demo2_res.txt

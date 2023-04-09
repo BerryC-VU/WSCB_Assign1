@@ -1,0 +1,207 @@
+Text read from file: https://example.com/
+"4"
+Text read from file: https://board.example.edu/appliance.php
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/
+"5"
+Text read from file: https://boy.example.com/?brother=bikes
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/back/appliance.php
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/achiever/believe.htm
+"400 Error: The URL is not valid"
+Text read from file: http://achiever.example.net/#beef
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.org/bit/berry
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/?appliance=activity&airport=bead
+"6"
+Text read from file: http://www.example.com/boy
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/?base=appliance
+"7"
+Text read from file: http://www.example.edu/
+"8"
+Text read from file: https://www.example.com/bell?bee=apparel
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/
+"The url already exists, the shortened identifier is 5"
+Text read from file: https://www.example.com/airplane#bedroom
+"400 Error: The URL is not valid"
+Text read from file: https://bottle.example.com/bells
+"400 Error: The URL is not valid"
+Text read from file: https://alarm.example.com/airport/box
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/
+"9"
+Text read from file: https://www.example.org/action/battle.html?belief=blade&action=bedroom
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.org/
+"A"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://www.example.edu/
+"B"
+Text read from file: http://www.example.com/achiever/base.html
+"400 Error: The URL is not valid"
+Text read from file: http://brother.example.com/afternoon?agreement=boot&bird=appliance
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://example.org/
+"C"
+Text read from file: https://www.example.com/arm
+"400 Error: The URL is not valid"
+Text read from file: https://example.com/box
+"400 Error: The URL is not valid"
+Text read from file: http://example.org/
+"D"
+Text read from file: http://badge.example.com/afternoon
+"400 Error: The URL is not valid"
+Text read from file: https://bee.example.net/beds.html
+"400 Error: The URL is not valid"
+Text read from file: https://bead.example.com/
+"400 Error: The URL is not valid"
+Text read from file: https://approval.example.com/
+"400 Error: The URL is not valid"
+Text read from file: http://aftermath.example.edu/
+"400 Error: The URL is not valid"
+Text read from file: https://blow.example.edu/
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/balance.php
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/beef.html?basketball=birth&achiever=beginner
+"400 Error: The URL is not valid"
+Text read from file: http://example.net/approval.php
+"400 Error: The URL is not valid"
+Text read from file: https://example.com/
+"The url already exists, the shortened identifier is 4"
+Text read from file: http://brick.example.net/
+"400 Error: The URL is not valid"
+Text read from file: http://balance.example.net/baseball/bait
+"400 Error: The URL is not valid"
+Text read from file: https://example.com/ball/boundary.html
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://blade.example.com/#basketball
+"400 Error: The URL is not valid"
+Text read from file: https://approval.example.com/belief?bone=bed&book=bag
+"400 Error: The URL is not valid"
+Text read from file: https://example.org/bed.html
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/amount
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.net/airport
+"400 Error: The URL is not valid"
+Text read from file: https://air.example.com/
+"400 Error: The URL is not valid"
+Text read from file: http://airplane.example.net/
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/#advertisement
+"E"
+Text read from file: https://www.example.net/
+"F"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://www.example.com/blade.php
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.org/
+"G"
+Text read from file: http://www.example.com/boundary/activity
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/
+"The url already exists, the shortened identifier is 5"
+Text read from file: https://book.example.com/authority.aspx
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.edu/
+"The url already exists, the shortened identifier is 8"
+Text read from file: http://www.example.org/airplane/amount
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/
+"H"
+Text read from file: https://www.example.net/?basin=apparel
+"I"
+Text read from file: https://example.com/birthday/appliance
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.net/behavior.php
+"400 Error: The URL is not valid"
+Text read from file: https://example.net/?birthday=brother
+"J"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: http://example.com/?anger=advice
+"K"
+Text read from file: https://www.example.net/#badge
+"L"
+Text read from file: https://example.org/berry/bag.aspx
+"400 Error: The URL is not valid"
+Text read from file: https://example.com/
+"The url already exists, the shortened identifier is 4"
+Text read from file: http://www.example.com/
+"The url already exists, the shortened identifier is 5"
+Text read from file: https://www.example.com/addition
+"400 Error: The URL is not valid"
+Text read from file: https://art.example.net/adjustment.html
+"400 Error: The URL is not valid"
+Text read from file: https://afternoon.example.com/afterthought/bed.htm?book=battle&box=brass
+"400 Error: The URL is not valid"
+Text read from file: http://badge.example.com/
+"400 Error: The URL is not valid"
+Text read from file: http://books.example.com/#account
+"400 Error: The URL is not valid"
+Text read from file: http://example.org/#air
+"M"
+Text read from file: https://www.example.edu/arm.php
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/bubble
+"400 Error: The URL is not valid"
+Text read from file: https://approval.example.com/bedroom.html
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/blood.php
+"400 Error: The URL is not valid"
+Text read from file: http://act.example.com/acoustics
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: http://books.example.net/?basketball=blow&aftermath=arm
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/babies/bikes
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.org/bite/beds.htm
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.org/battle?air=agreement&actor=bells#babies
+"400 Error: The URL is not valid"
+Text read from file: http://www.example.com/
+"The url already exists, the shortened identifier is 5"
+Text read from file: https://birthday.example.com/
+"400 Error: The URL is not valid"
+Text read from file: https://example.com/
+"The url already exists, the shortened identifier is 4"
+Text read from file: http://boat.example.org/?badge=actor&badge=branch
+"400 Error: The URL is not valid"
+Text read from file: http://example.com/
+"The url already exists, the shortened identifier is H"
+Text read from file: https://example.com/
+"The url already exists, the shortened identifier is 4"
+Text read from file: http://art.example.com/bedroom
+"400 Error: The URL is not valid"
+Text read from file: https://example.com/air.html
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://www.example.com/?bells=battle
+"N"
+Text read from file: http://example.com/?babies=bikes&afterthought=activity
+"O"
+Text read from file: http://example.com/branch
+"400 Error: The URL is not valid"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://www.example.com/
+"The url already exists, the shortened identifier is 9"
+Text read from file: https://www.example.com/art.html
+"400 Error: The URL is not valid"
+Text read from file: https://example.org/?books=bat&bottle=belief

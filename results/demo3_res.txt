@@ -1,0 +1,62 @@
+return all urls
+add 3 urls
+{
+    "0": "http://www.google.com"
+}
+add 3 urls
+"1"
+"2"
+"3"
+"4"
+"5"
+{
+    "0": "http://www.google.com",
+    "1": "http://www.youtube.com",
+    "2": "http://www.baidu.com",
+    "3": "http://www.instagram.com",
+    "4": "http://www.facebook.com",
+    "5": "http://www.yahoo.com"
+}
+"6"
+{
+    "0": "http://www.google.com",
+    "1": "http://www.youtube.com",
+    "2": "http://www.baidu.com",
+    "3": "http://www.instagram.com",
+    "4": "http://www.facebook.com",
+    "5": "http://www.yahoo.com",
+    "6": "http://www.twitter.com"
+}
+update (1:http://www.baidu.com) to (1:http://www.taobao.com)
+"The URL has been updated. old_url is: http://www.youtube.com and the updated url is: http://www.taobao.com"
+{
+    "0": "http://www.google.com",
+    "1": "http://www.taobao.com",
+    "2": "http://www.baidu.com",
+    "3": "http://www.instagram.com",
+    "4": "http://www.facebook.com",
+    "5": "http://www.yahoo.com",
+    "6": "http://www.twitter.com"
+}
+delete a url(1)
+return all urls
+{
+    "0": "http://www.google.com",
+    "2": "http://www.baidu.com",
+    "3": "http://www.instagram.com",
+    "4": "http://www.facebook.com",
+    "5": "http://www.yahoo.com",
+    "6": "http://www.twitter.com"
+}
+add a new url
+"1"
+return all urls
+{
+    "0": "http://www.google.com",
+    "2": "http://www.baidu.com",
+    "3": "http://www.instagram.com",
+    "4": "http://www.facebook.com",
+    "5": "http://www.yahoo.com",
+    "6": "http://www.twitter.com",
+    "1": "http://www.openai.com"
+}
