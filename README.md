@@ -27,7 +27,7 @@ conda avtivate web1
 
 **Run the Demo** 
 
-There are four demo files under the demos folder. Users can test what they want using existing demo*.sh or create some new requests
+There are four demo files under the demos folder. Users can test what they want using existing `demo*.sh` or create some new requests
 To test all specifications, run the following code in the PATH  for an example:
 ```
 ./demos/demo*.sh > ./results/demo*_res.txt
