@@ -11,6 +11,7 @@ In this project, we aim to implement the following functions:
 |               |                                        |                                                                                  |   |   |
 
 **Create Environment**
+
 Run the following code to configure the environment:
 ```
 conda env create -f environment.yml
@@ -18,12 +19,14 @@ conda avtivate web1
 ```
 
 **Run the server**
+
  ```
  python3 main.py
  ```
 
 
 **Run the Demo** 
+
 There are four demo files under the demos folder. Users can test what they want using existing demo*.sh or create some new requests
 To test all specifications, run the following code in the PATH  for an example:
 ```
