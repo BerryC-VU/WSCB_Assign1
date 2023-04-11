@@ -10,19 +10,22 @@ In this project, we aim to implement the following functions:
 | /:id & PUT    | Update URL based on given id           | 200, if id exists and URL valid 400, if id exists and URL invalid 404, otherwise |   |   |
 |               |                                        |                                                                                  |   |   |
 
-** Environment requirment **
-```bash
-conda environment.yml
-```bash
+**Create Environment**
+Run the following code to configure the environment:
+```
+conda env create -f environment.yml
+conda avtivate web1
+```
 
-* Run the server *
- ```bash
+**Run the server**
+ ```
  python3 main.py
- ```bash
+ ```
 
 
-** Demo ** 
-To test all specifications, run the following code for an example:
-```bash
-./demos/demo1.sh > ./results/demo1_res.txt
-```bash
+**Run the Demo** 
+There are four demo files under the demos folder. Users can test what they want using existing demo*.sh or create some new requests
+To test all specifications, run the following code in the PATH  for an example:
+```
+./demos/demo*.sh > ./results/demo*_res.txt
+```
