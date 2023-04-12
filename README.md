@@ -6,18 +6,11 @@ The following functions are implemented in this project:
 
 | Path & Method | Functionality                          | Return values                                                                    |
 |---------------|----------------------------------------|----------------------------------------------------------------------------------|
-| /:id & GET    | Return URL corresponds to the given id | 301, if id exists;
-                                                           404, if id does not exist|
-| /:id & PUT    | Update URL based on the given id       | 200, if id exists and URL valid; 
-                                                           400, if id exists and URL invalid; 
-                                                           404, if id does not exist| 
-| /:id & DELETE | Delete URL based on the given id       | 204, delete the (id, URL) from the dict;
-                                                           404, if id does not exist|
-
+| /:id & GET    | Return URL corresponds to the given id | 301, if id exists; 404, if id does not exist|
+| /:id & PUT    | Update URL based on the given id       | 200, if id exists and URL valid; 400, if id exists and URL invalid; 404, if id does not exist| 
+| /:id & DELETE | Delete URL based on the given id       | 204, delete the (id, URL) from the dict; 404, if id does not exist|
 | / & GET | Return all existing (id, URL) pairs          | 200, return all (id, URL) pairs|
-| / & POST | Create a new (id,URL) pair in the dict      | 201, if URL is valid and not existed in the dict, generate id;
-                                                           400, if URL is valid but existed, return corresponding id
-                                                           404, if URL is invalid|
+| / & POST | Create a new (id,URL) pair in the dict      | 201, if URL is valid and not existed in the dict, generate id; 400, if URL is valid but existed, return corresponding id; 404, if URL is invalid|
 | / & DELETE| /       | 404, no operation is allowed|
 
 
