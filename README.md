@@ -2,17 +2,28 @@
 
 **University of Amsterdam Web Services and Cloud-Based System Assignment 1**
 
-In this project, we aim to implement the following functions:
+The following functions are implemented in this project:
 
 | Path & Method | Functionality                          | Return values                                                                    |   |   |
-|---------------|----------------------------------------|----------------------------------------------------------------------------------|---|---|
-| /:id & GET    | Return URL corresponds to the given id | 301, if id exists 404, otherwise                                                 |   |   |
-| /:id & PUT    | Update URL based on given id           | 200, if id exists and URL valid 400, if id exists and URL invalid 404, otherwise |   |   |
-|               |                                        |                                                                                  |   |   |
+|---------------|----------------------------------------|----------------------------------------------------------------------------------|
+| /:id & GET    | Return URL corresponds to the given id | 301, if id exists;
+                                                           404, if id does not exist|
+| /:id & PUT    | Update URL based on the given id       | 200, if id exists and URL valid; 
+                                                           400, if id exists and URL invalid; 
+                                                           404, if id does not exist| 
+| /:id & DELETE | Delete URL based on the given id       | 204, delete the (id, URL) from the dict;
+                                                           404, if id does not exist|
+
+| / & GET | Return all existing (id, URL) pairs          | 200, return all (id, URL) pairs|
+| / & POST | Create a new (id,URL) pair in the dict      | 201, if URL is valid and not existed in the dict, generate id;
+                                                           400, if URL is valid but existed, return corresponding id
+                                                           404, if URL is invalid|
+| / & DELETE| /       | 404, no operation is allowed|
+
 
 **Create Environment**
 
-Run the following code to configure the environment:
+Before starting the server, run the following code to configure the environment:
 ```
 conda env create -f environment.yml
 conda avtivate web1
@@ -27,7 +38,7 @@ conda avtivate web1
 
 **Run the Demo** 
 
-There are four demo files under the demos folder. Users can test what they want using existing `demo*.sh` or create some new requests
+There are four demo files under the [demos](https://github.com/BerryC-VU/WSCB_Assign1/tree/main/demos) folder. Users can test what they want using existing `demo*.sh` or create some new requests. The results of the demos can be found in the [results](https://github.com/BerryC-VU/WSCB_Assign1/tree/main/results) folder.
 To test all specifications, run the following code in the PATH  for an example:
 ```
 ./demos/demo*.sh > ./results/demo*_res.txt
