@@ -4,7 +4,7 @@
 
 The following functions are implemented in this project:
 
-| Path & Method | Functionality                          | Return values                                                                    |   |   |
+| Path & Method | Functionality                          | Return values                                                                    |
 |---------------|----------------------------------------|----------------------------------------------------------------------------------|
 | /:id & GET    | Return URL corresponds to the given id | 301, if id exists;
                                                            404, if id does not exist|
