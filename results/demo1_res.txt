@@ -36,3 +36,9 @@ return all urls
     "3": "http://www.twitter.com",
     "1": "http://www.openai.com"
 }
+GET non-existing ID @#
+"404 Error: The identifier does not exist"
+GET ID 1
+"http://www.openai.com"
+DELETE ALL IDs
+"404 Error"

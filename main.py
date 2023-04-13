@@ -36,6 +36,17 @@ def is_valid(url):
         references:
         1. https://www.makeuseof.com/regular-expressions-validate-url/
         2. https://docs.python.org/3/library/re.html
+        
+        The regex expression explanation.
+        1. ^(http|https)://   guarantee that the string starts with either http or https followed by ://
+        2. [-a-zA-Z0-9@:%._\\+~#?&//=]{2,256} represents the numbers, lower/upper case letter and some special 
+        characters with a length between 2 and 256
+        3. \\. represents the dot
+        4. [a-z]{2,6} represents the any lower case letter with a length between 2 and 6
+        5. \\b represents the boundary of the word
+        6. [-a-zA-Z0-9@:%._\\+~#?&//=]* represents the numbers, lower/upper case letter and some special 
+        characters with a length between 2 and 256
+        7. $ indicates the end of the string.
         """
         regex = "^((http|https)://)[-a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)$"
         r = re.compile(regex)
@@ -43,6 +54,7 @@ def is_valid(url):
             return True
         else:
             return False
+        
         
     def check_exist(url):
         # https://stackoverflow.com/questions/16778435/python-check-if-website-exists
@@ -73,6 +85,7 @@ def generate_id(url):
         global id_pool
         global counter
         if len(id_pool) > 0:
+            # return the root of the min heap which is the minimum(shortest) value of the min heap.
             return heapq.heappop(id_pool)
         else:
             # transform the base10 number to base62 number to make it shorter
@@ -112,6 +125,7 @@ class AccessWithID(Resource):
             else if ID exist and is valid, update the URL, return the old URL, updated URL and status code 200
         """
         try:
+            # with lock statement will perform lock.acquire() and lock.release() automatically
             with lock:
                 if id not in mappings:
                     return "404 Error: The identifier does not exist", 404
@@ -170,7 +184,7 @@ class AccessWithoutID(Resource):
         """
         
         try:
-            with lock:
+            with lock: 
                 args = parser.parse_args()
                 url = args['url'] 
                 if is_valid(url):

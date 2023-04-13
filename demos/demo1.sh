@@ -19,5 +19,11 @@ echo "add a new url"
 curl http://127.0.0.1:5000/ -d "url=http://www.openai.com" -X POST
 echo "return all urls"
 curl http://127.0.0.1:5000/ -X GET 
+echo "GET non-existing ID @#"
+curl http://127.0.0.1:5000/@# -X GET 
+echo "GET ID 1"
+curl http://127.0.0.1:5000/1 -X GET 
+echo "DELETE ALL IDs"
+curl http://127.0.0.1:5000/ -X DELETE
  
 #> ./results/demo1_res.txt

@@ -1,12 +1,12 @@
-add 3 urls
+add 1 url
 "1"
-"3"
-"5"
+add existed URL
+"The url already exists, the shortened identifier is 1"
+add one valid, but non-existed URL
+"400 Error: The URL is not valid"
+add one invalid URL
+"400 Error: The URL is not valid"
 {
     "0": "http://www.google.com",
-    "1": "http://www.youtube.com",
-    "2": "http://www.baidu.com",
-    "3": "http://www.instagram.com",
-    "4": "http://www.facebook.com",
-    "5": "http://www.yahoo.com"
+    "1": "http://www.youtube.com"
 }
