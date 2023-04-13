@@ -39,6 +39,6 @@ To test all specifications, run the following code in the PATH  for an example:
 
 **Reference**
 1. [Regular expression to check URL format](https://www.makeuseof.com/regular-expressions-validate-url/)  
-2. [Check URL existence:](https://stackoverflow.com/questions/16778435/python-check-if-website-exists)
+2. [Check URL existence](https://stackoverflow.com/questions/16778435/python-check-if-website-exists)
 3. [Min-heap structure of ID_POOL](https://docs.python.org/3/library/heapq.html)
 4. [Base62 converter](https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener)
