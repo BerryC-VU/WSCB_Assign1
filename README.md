@@ -19,7 +19,7 @@ The following functions are implemented in this project:
 Before starting the server, run the following code to configure the environment:
 ```
 conda env create -f environment.yml
-conda avtivate web1
+conda activate web1
 ```
 
 **Run the server**
@@ -32,7 +32,8 @@ conda avtivate web1
 **Run the Demo** 
 
 There are four demo files under the [demos](https://github.com/BerryC-VU/WSCB_Assign1/tree/main/demos) folder. Users can test what they want using existing `demo*.sh` or create some new requests. The results of the demos can be found in the [results](https://github.com/BerryC-VU/WSCB_Assign1/tree/main/results) folder.
-To test all specifications, run the following code in the PATH  for an example:
+
+To test all specifications, run the following code as an example:
 ```
 ./demos/demo*.sh > ./results/demo*_res.txt
 ```
